@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <Box minHeight="100vh">
       <Header title="アルバムの作成" backUrl="/albums" />
-      <Box p={4}>
+      <Box p={2}>
         <AlbumCreateForm />
       </Box>
     </Box>

@@ -1,0 +1,1 @@
+ALTER TABLE "photos" ALTER COLUMN "album_id" SET NOT NULL;--> statement-breakpoint

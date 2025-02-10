@@ -1,5 +1,6 @@
-import { j } from "./jstack"
-import { postRouter } from "./routers/post-router"
+import { j } from './jstack';
+import { albumRouter } from './routers/album-router';
+import { photoRouter } from './routers/photo-router';
 
 /**
  * This is your base API.
@@ -9,18 +10,19 @@ import { postRouter } from "./routers/post-router"
  */
 const api = j
   .router()
-  .basePath("/api")
+  .basePath('/api')
   .use(j.defaults.cors)
-  .onError(j.defaults.errorHandler)
+  .onError(j.defaults.errorHandler);
 
 /**
  * This is the main router for your server.
  * All routers in /server/routers should be added here manually.
  */
 const appRouter = j.mergeRouters(api, {
-  post: postRouter,
-})
+  album: albumRouter,
+  photo: photoRouter,
+});
 
-export type AppRouter = typeof appRouter
+export type AppRouter = typeof appRouter;
 
-export default appRouter
+export default appRouter;

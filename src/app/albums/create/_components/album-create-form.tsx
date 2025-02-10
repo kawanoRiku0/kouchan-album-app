@@ -112,7 +112,7 @@ export const AlbumCreateForm = () => {
               hidden
             />
           </Button>
-          <Stack spacing={2} direction="row" flexWrap="wrap">
+          <Stack direction="row" flexWrap="wrap">
             {files.map((file) => {
               const url = URL.createObjectURL(file);
               return (
@@ -120,7 +120,7 @@ export const AlbumCreateForm = () => {
                   key={url}
                   sx={{
                     position: 'relative',
-                    width: '200px',
+                    width: 60,
                     aspectRatio: '1/1',
                     bgcolor: 'gray',
                   }}
@@ -131,7 +131,7 @@ export const AlbumCreateForm = () => {
             })}
           </Stack>
           <Button type="submit" variant="contained" disabled={isPending}>
-            作成
+            アルバムの作成
           </Button>
         </Stack>
       </form>

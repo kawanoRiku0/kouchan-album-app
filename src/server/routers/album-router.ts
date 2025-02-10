@@ -1,5 +1,5 @@
 import { albums, photos } from '@/server/db/schema';
-import { desc } from 'drizzle-orm';
+import { desc, inArray } from 'drizzle-orm';
 import { z } from 'zod';
 import { j, publicProcedure } from '../jstack';
 
@@ -7,6 +7,7 @@ export const albumRouter = j.router({
   getAll: publicProcedure
     .input(
       z.object({
+        ids: z.array(z.number()).optional(),
         limit: z.number().optional(),
         offset: z.number().optional(),
       }),
@@ -17,6 +18,11 @@ export const albumRouter = j.router({
       const allAlbums = await db
         .select()
         .from(albums)
+        .where(
+          (input.ids?.length ?? 0) > 0
+            ? inArray(albums.id, input.ids ?? [])
+            : undefined,
+        )
         .orderBy(desc(albums.createdAt))
         .limit(input.limit ?? 10)
         .offset(input.offset ?? 0);

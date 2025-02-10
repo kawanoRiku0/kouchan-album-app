@@ -109,6 +109,7 @@ export const AlbumCreateForm = () => {
               type="file"
               multiple
               onChange={handleChangeFiles}
+              accept="image/*"
               hidden
             />
           </Button>

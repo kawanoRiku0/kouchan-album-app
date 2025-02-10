@@ -4,8 +4,8 @@ import { ToastContainer } from 'react-toastify';
 import { Providers } from './components/providers';
 
 export const metadata: Metadata = {
-  title: 'JStack App',
-  description: 'Created using JStack',
+  title: 'こうちゃんアルバム',
+  description: 'こうちゃんのアルバム',
   icons: [{ rel: 'icon', url: '/favicon.svg' }],
 };
 
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="ja">
       <body className="antialiased">
         <Providers>
           <Box bgcolor="beige" minHeight="100vh">

@@ -1,5 +1,7 @@
 import { getPhotos } from '@/app/model/photo';
 import { Header } from '@/common/components/header';
+import InfoIcon from '@mui/icons-material/Info';
+import { Alert, Stack } from '@mui/material';
 import { PhotoCardsWithViewer } from './_components';
 
 type Props = {
@@ -16,7 +18,12 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <Header title="写真一覧" backUrl={'/albums'} />
-      <PhotoCardsWithViewer photos={photos} />
+      <Stack spacing={2}>
+        <Alert icon={<InfoIcon fontSize="inherit" />} severity="info">
+          写真をタップすると拡大して見れます
+        </Alert>
+        <PhotoCardsWithViewer photos={photos} />
+      </Stack>
     </>
   );
 }

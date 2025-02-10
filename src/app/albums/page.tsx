@@ -1,6 +1,7 @@
 import { Header } from '@/common/components/header';
 import AddIcon from '@mui/icons-material/Add';
-import { Button, Stack, Typography } from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
+import { Alert, Button, Stack, Typography } from '@mui/material';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { getAlbums } from '../model/album';
@@ -30,6 +31,9 @@ export default async function Page() {
     <>
       <Header title="アルバム一覧" />
       <Stack spacing={4} p={4}>
+        <Alert icon={<InfoIcon fontSize="inherit" />} severity="info">
+          アルバムをタップすると、写真一覧を見れます
+        </Alert>
         <Stack direction="row" justifyContent="flex-end">
           <Link href="/albums/create" style={{ width: 'fit-content' }}>
             <Button

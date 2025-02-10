@@ -17,7 +17,7 @@ export const PhotoCards = ({ photos, onSelectPhoto = () => {} }: Props) => {
           <Button
             key={photo.id}
             onClick={() => onSelectPhoto(photo)}
-            sx={{ minWidth: 200 }}
+            sx={{ minWidth: 100 }}
           >
             <PhotoCard photo={photo} />
           </Button>

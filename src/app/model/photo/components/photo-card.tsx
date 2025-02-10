@@ -14,8 +14,8 @@ export const PhotoCard = ({ photo }: Props) => {
       sx={{
         position: 'relative',
         aspectRatio: '1/1',
+        width: '100%',
         backgroundColor: 'gray',
-        width: '200px',
         border: '1px solid white',
       }}
     >

@@ -12,28 +12,27 @@ type Props = {
 
 export const AlbumCard = ({ album, children }: Props) => {
   return (
-    <Stack
-      spacing={2}
-      key={album.id}
-      p={3}
-      bgcolor="background.paper"
-      borderRadius={2}
+    <Link
+      href={`/albums/${album.id}/photos`}
+      style={{
+        cursor: 'pointer',
+        textDecoration: 'none',
+        color: 'inherit',
+      }}
     >
-      <Stack>
-        <Link
-          href={`/albums/${album.id}/photos`}
-          style={{
-            cursor: 'pointer',
-            width: 'fit-content',
-            textDecoration: 'none',
-            color: 'inherit',
-          }}
-        >
+      <Stack
+        spacing={2}
+        key={album.id}
+        p={3}
+        bgcolor="background.paper"
+        borderRadius={2}
+      >
+        <Stack>
           <Typography variant="h6">{album.name}</Typography>
-        </Link>
-        <Typography variant="body1">{album.description}</Typography>
+          <Typography variant="body1">{album.description}</Typography>
+        </Stack>
+        {children}
       </Stack>
-      {children}
-    </Stack>
+    </Link>
   );
 };

@@ -25,7 +25,7 @@ export const Header = ({ title, backUrl }: Props) => {
           <Typography variant="h6">{title}</Typography>
         </Toolbar>
       </AppBar>
-      <Toolbar />
+      <Toolbar /> {/* ヘッダーの下にツールバーを追加 */}
     </>
   );
 };

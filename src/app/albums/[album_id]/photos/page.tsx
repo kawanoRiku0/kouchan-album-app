@@ -2,7 +2,7 @@ import { getAlbums } from '@/app/model/album';
 import { getPhotos } from '@/app/model/photo';
 import { Header } from '@/common/components/header';
 import InfoIcon from '@mui/icons-material/Info';
-import { Alert, Button, Stack } from '@mui/material';
+import { Alert, Button, Stack, Typography } from '@mui/material';
 import Link from 'next/link';
 import { PhotoCardsWithViewer } from './_components';
 
@@ -34,7 +34,10 @@ export default async function Page({ params }: Props) {
   return (
     <>
       <Header title={`${album.name}の写真一覧`} backUrl={'/albums'} />
-      <Stack spacing={2}>
+      <Stack spacing={2} p={2}>
+        <Typography variant="h6" fontSize={14}>
+          {album.description}
+        </Typography>
         <Alert icon={<InfoIcon fontSize="inherit" />} severity="info">
           写真をタップすると拡大して見れます
         </Alert>

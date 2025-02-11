@@ -1,5 +1,5 @@
 import { PhotoCard } from '@/app/model/photo/components/photo-card';
-import { Button, Stack } from '@mui/material';
+import { Box, Button } from '@mui/material';
 
 type Props = {
   photos: {
@@ -11,18 +11,15 @@ type Props = {
 
 export const PhotoCards = ({ photos, onSelectPhoto = () => {} }: Props) => {
   return (
-    <>
-      <Stack direction="row" flexWrap="wrap">
-        {photos.map((photo) => (
-          <Button
-            key={photo.id}
-            onClick={() => onSelectPhoto(photo)}
-            sx={{ minWidth: 100 }}
-          >
-            <PhotoCard photo={photo} />
-          </Button>
-        ))}
-      </Stack>
-    </>
+    <Box
+      display="grid"
+      gridTemplateColumns="repeat(auto-fill, minmax(150px, 1fr))"
+    >
+      {photos.map((photo) => (
+        <Button key={photo.id} onClick={() => onSelectPhoto(photo)}>
+          <PhotoCard photo={photo} />
+        </Button>
+      ))}
+    </Box>
   );
 };

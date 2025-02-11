@@ -30,7 +30,7 @@ export default async function Page() {
   return (
     <>
       <Header title="アルバム一覧" />
-      <Stack spacing={4} p={2}>
+      <Stack spacing={2} p={2}>
         <Alert icon={<InfoIcon fontSize="inherit" />} severity="info">
           アルバムをタップすると、写真一覧を見れます
         </Alert>

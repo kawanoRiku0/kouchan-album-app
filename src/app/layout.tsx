@@ -16,7 +16,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body className="antialiased">
+      <body className="antialiased" style={{ margin: 0 }}>
         <Providers>
           <Box bgcolor="beige" minHeight="100vh">
             {children}

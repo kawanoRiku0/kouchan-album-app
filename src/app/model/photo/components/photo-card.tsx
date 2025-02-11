@@ -15,11 +15,9 @@ export const PhotoCard = ({ photo }: Props) => {
         position: 'relative',
         aspectRatio: '1/1',
         width: '100%',
-        backgroundColor: 'gray',
-        border: '1px solid white',
       }}
     >
-      <Image src={photo.url} alt={'投稿画像'} fill objectFit="contain" />
+      <Image src={photo.url} alt={'投稿画像'} objectFit="cover" fill />
     </Box>
   );
 };

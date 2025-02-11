@@ -1,5 +1,6 @@
 'use client';
 import { PhotoViewer } from '@/app/model/photo/components/photo-viewer';
+import { Box } from '@mui/material';
 import { useState } from 'react';
 import { PhotoCards } from './photo-cards';
 
@@ -16,7 +17,7 @@ export const PhotoCardsWithViewer = ({ photos }: Props) => {
   } | null>(null);
 
   return (
-    <>
+    <Box>
       <PhotoCards photos={photos} onSelectPhoto={setSelectedPhoto} />
       {selectedPhoto && (
         <PhotoViewer
@@ -25,6 +26,6 @@ export const PhotoCardsWithViewer = ({ photos }: Props) => {
           onClose={() => setSelectedPhoto(null)}
         />
       )}
-    </>
+    </Box>
   );
 };
